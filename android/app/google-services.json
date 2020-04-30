@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "768863174356",
+    "firebase_url": "https://cs499-mobileapps.firebaseio.com",
+    "project_id": "cs499-mobileapps",
+    "storage_bucket": "cs499-mobileapps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:768863174356:android:37544b6f96ea05e99a8541",
+        "android_client_info": {
+          "package_name": "Groot.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "768863174356-o2c77slrr1s6gak06lja4rhf1ue7amrf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4I1e6zGlLNubYqk-X26Otl-MjlRuQgGc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "768863174356-o2c77slrr1s6gak06lja4rhf1ue7amrf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:768863174356:android:2ca5fd23dbe43bef9a8541",
+        "android_client_info": {
+          "package_name": "com.teamgroot.last_resort"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "768863174356-o2c77slrr1s6gak06lja4rhf1ue7amrf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4I1e6zGlLNubYqk-X26Otl-MjlRuQgGc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "768863174356-o2c77slrr1s6gak06lja4rhf1ue7amrf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
