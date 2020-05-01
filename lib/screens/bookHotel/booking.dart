@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'confirmation_page.dart';
-import 'constants.dart';
+import '../../constants.dart';
 import 'hotel.dart';
 
 class Booking extends StatefulWidget {
@@ -73,9 +73,9 @@ class _BookingState extends State<Booking> {
       },
     );
   }
-  
+
   @override
-Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Make a Booking'),
@@ -85,47 +85,53 @@ Widget build(BuildContext context) {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text( datePicked == null ? 'You haven\'t booked anything yet' : booking + datePicked.month.toString() + "/" + datePicked.day.toString() + "/" +datePicked.year.toString(),
+            Text(
+              datePicked == null
+                  ? 'You haven\'t booked anything yet'
+                  : booking +
+                      datePicked.month.toString() +
+                      "/" +
+                      datePicked.day.toString() +
+                      "/" +
+                      datePicked.year.toString(),
               style: resultTextStyle,
             ),
-
             FlatButton.icon(
               color: pageColor,
               icon: calenderIcon,
               label: Text('Make a Booking'),
-              onPressed: (){
+              onPressed: () {
                 showDatePicker(
-                    context: context,
-                    initialDate: datePicked == null ? DateTime.now() : datePicked,
-                    firstDate: DateTime(2020),
-                    lastDate: DateTime(2030)
-                ).then((date){
+                        context: context,
+                        initialDate:
+                            datePicked == null ? DateTime.now() : datePicked,
+                        firstDate: DateTime(2020),
+                        lastDate: DateTime(2030))
+                    .then((date) {
                   setState(() {
                     datePicked = date;
                   });
                 });
               },
             ),
-            Text('Available Rooms: ' + widget.hotelChosen.availableRooms.toString()),
+            Text('Available Rooms: ' +
+                widget.hotelChosen.availableRooms.toString()),
             Text('Price: \$' + widget.hotelChosen.priceOfRoom.toString()),
           ],
         ),
       ),
-
       floatingActionButton: FloatingActionButton(
         child: rightArrow,
         backgroundColor: pageColor,
-        onPressed: (){
-          if(datePicked == null){
+        onPressed: () {
+          if (datePicked == null) {
             noBooking();
-          }
-          else if(widget.hotelChosen.availableRooms == 0){
+          } else if (widget.hotelChosen.availableRooms == 0) {
             noRooms();
-          }
-          else{
+          } else {
             Navigator.push(
               context,
-              MaterialPageRoute(builder:(context) {
+              MaterialPageRoute(builder: (context) {
                 return ConfirmationScreen(datePicked);
               }),
             );
@@ -135,5 +141,3 @@ Widget build(BuildContext context) {
     );
   }
 }
-
-

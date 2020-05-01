@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:last_resort/screens/bookHotel/available_hotels.dart';
 import '../constants.dart';
 import '../components/rounded_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -68,7 +69,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       email: email, password: password);
                   if (newUser != null) {
                     // navigate to the next page
-                    // Navigator.pushNamed(context, )
+                    Navigator.pushNamed(context, AvailableHotels.id);
                   }
                 } catch (e) {
                   print(e);

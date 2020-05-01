@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
+import '../../constants.dart';
 
 class ThankYouPage extends StatelessWidget {
   @override
@@ -18,12 +18,12 @@ class ThankYouPage extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 60.0,
               ),
-
             ),
             RaisedButton(
               child: Text('OK'),
-              onPressed: (){
-                Navigator.popUntil(context, ModalRoute.withName(Navigator.defaultRouteName));
+              onPressed: () {
+                Navigator.popUntil(
+                    context, ModalRoute.withName(Navigator.defaultRouteName));
               },
             ),
           ],
