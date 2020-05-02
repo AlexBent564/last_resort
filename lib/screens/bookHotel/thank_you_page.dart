@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../constants.dart';
+import '../welcome_screen.dart';
 
 class ThankYouPage extends StatelessWidget {
   @override
@@ -22,8 +23,7 @@ class ThankYouPage extends StatelessWidget {
             RaisedButton(
               child: Text('OK'),
               onPressed: () {
-                Navigator.popUntil(
-                    context, ModalRoute.withName(Navigator.defaultRouteName));
+                Navigator.pushNamed(context, WelcomeScreen.id);
               },
             ),
           ],

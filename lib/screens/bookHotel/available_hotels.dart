@@ -2,13 +2,48 @@ import 'package:flutter/material.dart';
 import 'booking.dart';
 import 'hotel.dart';
 
-class AvailableHotels extends StatelessWidget {
+class AvailableHotels extends StatefulWidget {
+  AvailableHotels({this.hotelLocation});
+
   static const String id = 'available_hotels';
+
+  final hotelLocation;
+
+  @override
+  _AvailableHotelsState createState() => _AvailableHotelsState();
+}
+
+class _AvailableHotelsState extends State<AvailableHotels> {
+  String hotelName;
+  String country;
+  String state;
+  String city;
+  double hotelLat;
+  double hotelLong;
+
+  @override
+  void initState() {
+    super.initState();
+    print(widget.hotelLocation);
+    updateUI(widget.hotelLocation);
+  }
+
+  void updateUI(dynamic hotelData) {
+    hotelName = hotelData["results"]["hotels"][0]["name"];
+    country = hotelData["results"]["locations"][0]["countryIso"];
+    state = hotelData["results"]["locations"][0]["state"];
+    city = hotelData["results"]["locations"][0]["name"];
+    hotelLat = hotelData["results"]["hotels"][0]["location"]["lat"];
+    hotelLong = hotelData["results"]["hotels"][0]["location"]["lon"];
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _hotelListView(context),
+      backgroundColor: Colors.red,
+      body: Center(
+        child: _hotelListView(context),
+      ),
     );
   }
 
