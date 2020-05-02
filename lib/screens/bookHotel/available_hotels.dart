@@ -46,12 +46,13 @@ class _AvailableHotelsState extends State<AvailableHotels> {
       ),
     );
   }
-
+  
   Widget _hotelListView(BuildContext context) {
     List<Hotel> _availableHotels = [
-      Hotel(name: 'First', rooms: 5, price: 100),
-      Hotel(name: 'Second', rooms: 1, price: 80),
-      Hotel(name: 'Third', rooms: 0, price: 50),
+      Hotel(name: hotelName, rooms: 5, price: 100, country: country, state: state, city: city, lat: hotelLat, long: hotelLong, img: 'images/hotel1.jpg'),
+      Hotel(name: 'Meta', rooms: 2, price: 80, country: 'USA', state: 'AZ', city: 'Flagstaff', lat: 123, long: 456, img: 'images/hotel2.jpg'),
+      Hotel(name: 'Madrid', rooms: 12, price: 50, country: 'Spain', state: 'State1', city: 'Madrid', lat: 789, long: 101, img: 'images/hotel3.jpg'),
+      Hotel(name: 'London', rooms: 0, price: 50, country: 'England', state: 'State2', city: 'London', lat: 112, long: 131, img: 'images/hotel4.jpg'),
     ];
 
     Hotel chosenHotel;
@@ -60,7 +61,10 @@ class _AvailableHotelsState extends State<AvailableHotels> {
       itemCount: _availableHotels.length,
       itemBuilder: (context, index) {
         return ListTile(
-          title: Text(_availableHotels[index].hotelName),
+          leading: CircleAvatar(
+            backgroundImage: AssetImage(_availableHotels[index].image),
+          ),
+          title: Text(_availableHotels[index].hotelName + ', ' + _availableHotels[index].hotelCountry + ', Lat: ' + _availableHotels[index].hotelLat.toString() + ', Long: ' + _availableHotels[index].hotelLong.toString() ),
           onTap: () {
             chosenHotel = _availableHotels[index];
             Navigator.push(
