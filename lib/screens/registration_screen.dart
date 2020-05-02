@@ -3,6 +3,7 @@ import 'package:last_resort/screens/bookHotel/available_hotels.dart';
 import '../constants.dart';
 import '../components/rounded_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'loading_screen.dart';
 
 class RegistrationScreen extends StatefulWidget {
   static String id = 'registration_screen';
@@ -69,7 +70,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       email: email, password: password);
                   if (newUser != null) {
                     // navigate to the next page
-                    Navigator.pushNamed(context, AvailableHotels.id);
+                    Navigator.pushNamed(context, LoadingScreen.id);
                   }
                 } catch (e) {
                   print(e);

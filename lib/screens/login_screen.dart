@@ -3,6 +3,7 @@ import '../components/rounded_button.dart';
 import '../constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'registration_screen.dart';
+import 'loading_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   static String id = 'login_screen';
@@ -69,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       email: email, password: password);
 
                   if (user != null) {
-                    // route to the next page
+                    Navigator.pushNamed(context, LoadingScreen.id);
                   }
                 } catch (e) {
                   print(e);
